@@ -1,6 +1,6 @@
 package TestPackage;
 
-import Users.Flight;
+import classes.Flight;
 
 public class IsaiahTest {
 	

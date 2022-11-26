@@ -1,4 +1,4 @@
-/*package Users;
+package classes;
 
 import java.sql.*;
 
@@ -29,11 +29,11 @@ public class ConnectCode {
 	    	    // Close the connection
 	    	    connection.close();
 
-	}
+	} 
 
 }
 
-*/
+
 
 
 
