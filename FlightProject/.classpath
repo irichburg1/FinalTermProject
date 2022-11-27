@@ -17,6 +17,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/isaiahrichburg/Downloads/sqljdbc_11.2\enu/mssql-jdbc-11.2.0.jre11.jar"/>
+	<classpathentry kind="lib" path="/Users/abriellek/Downloads/mssql-jdbc-11.2.0.jre11.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
