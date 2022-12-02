@@ -8,14 +8,36 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Register {
+	
+	private  String tempFirstName ;
+	private  String tempLastName;
+	private  String tempAddress;
+	private  String tempZipcode;
+	private  String tempState;
+	private  String tempUsername;
+	private  String tempPassword;
+	private  String tempEmail;
+	private  String tempSsn;
+	private  String tempSecurityQuestion;
+	private  String tempSecurityAnswer;
+
+	
 	public static void main(String[]args) {
-		
-		
+		try {
+			Register r1 = new Register () ;
+			r1.register1();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void register1() throws SQLException {
+		
 	Scanner input = new Scanner(System.in);
+	
 	System.out.print("Enter an email:");
+	
 	String email = input.next();
 	
 	 Connection connection = DriverManager.getConnection
@@ -29,31 +51,31 @@ public class Register {
    	      		+ "loginTimeout=30;");
    	
    	    PreparedStatement statement = connection.prepareStatement("select username from [dbo].[USER] where email"
-   	    		+ " = '?'");
+   	    		+ " = ? ");
    	
-   	    statement.setString(1,email);
+   	    statement.setString(1,tempEmail);
    	    
    	    
    	    ResultSet resultSet = statement.executeQuery();
    	   
-   	    
    	    if (resultSet.next()) {
-   	      System.out.println("The email is already registered to an account");
-   	      register1();
-   	      }
-   	    
-   	    else {
+   	    	System.out.println("The email is already registered to an account");
+   	    	register1();
+   	      } else {
+   	    	  
+   	    	this.tempEmail = email ;
    	    	register2();
-   	    }
+   	    	
+   	      }
 
 } 
 	
-	public void register2() {
-	
-
+	public static void register2() {
 		
 	}
+	
+	
 
 	
-	}
+}
 
