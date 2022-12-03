@@ -58,4 +58,12 @@ public class Controller {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	public void enterEmail (ActionEvent event ) throws IOException {
+		
+		Parent root = FXMLLoader.load(getClass().getResource("RegisterPage.fxml")); 
+
+		
+		
+	}
 }
