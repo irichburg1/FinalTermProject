@@ -5,7 +5,9 @@ package TestPackage;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
@@ -22,30 +24,19 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 
 public class JavaFxPracticeFxmlIntro extends Application{
-	Stage window;
 	
 	public static void main(String[]args) {
 		launch(args);
 	}
 	
 	public void start(Stage primaryStage) throws Exception{
-		window = primaryStage;
-		window.setTitle("ComboBox Demo");
-		
-		
-		//Input and labels
-		TextField userInput = new TextField();
-		userInput.setMaxWidth(200);
-		Label firstLabel = new Label("Welcome to the site");
-		Label secondLabel = new Label();
-		
-		HBox bottomText = new HBox(firstLabel, secondLabel);
-		bottomText.setAlignment(Pos.CENTER);
-		VBox vBox = new VBox(10, userInput, bottomText);
-		vBox.setAlignment(Pos.CENTER);
-	
+		Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+		primaryStage.setTitle("Hello World");
+		primaryStage.setScene(new Scene(root, 300, 275));
+		primaryStage.show();
 	}
-	
 }
+	
+
 	
 	
