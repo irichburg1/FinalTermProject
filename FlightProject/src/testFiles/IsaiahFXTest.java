@@ -53,6 +53,7 @@ public class IsaiahFXTest extends Application {
     	IsaiahTest dbConnection = new IsaiahTest();
     	dbConnection.connectToServer();
 		
+    	System.out.println ("push");
     	
     	
 		this.changetext();
