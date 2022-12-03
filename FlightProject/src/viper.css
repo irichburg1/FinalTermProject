@@ -1,0 +1,24 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root{
+	-fx-background-color:#383838;
+}
+
+.label{  
+	-fx-text-fill:#E8E8E8
+}
+
+.button{
+	-fx-background-color: #AB4642;
+	-fx-text-fill: #FFFFFF;
+	-fx-backgroound-radiius:4;
+}
+
+.button-blue{
+	-fx-background-color: #7ACFC2;
+	-fx-text-fill: #FFFFFF;
+	-fx-backgroound-radiius:4;
+}
+
+#bold-label{
+	-fx-font-weight: bold;
+}

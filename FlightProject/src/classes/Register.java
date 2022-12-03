@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Register {
-	private String tempFirstName ;
+	private String tempFirstName;
 	private String tempLastName;
 	private String tempAddress;
 	private String tempZipcode;
@@ -19,17 +19,20 @@ public class Register {
 	private String tempSsn;
 	private String tempSecurityQuestion;
 	private String tempSecurityAnswer;
+	
+	
 
 	public static void main(String[]args) {
+		Register r1 = new Register();
 		try {
-			register1();
+			r1.register1();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 	}
 
-	public static void register1() throws SQLException {
+	public void register1() throws SQLException {
 	Scanner input = new Scanner(System.in);
 	System.out.print("Enter an email:");
 	String email = input.next();
@@ -59,14 +62,55 @@ public class Register {
    	      }
    	    
    	    else {
-   	    	register2();
+   	    	this.tempEmail = email;
+   	    	register2(); //The equivalent of pressing enter
    	    }
 
 } 
 	
-	public static void register2() {
+	public void register2() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("First name:");
+		this.tempFirstName = input.nextLine();
+		System.out.print("Last name:");
+		this.tempLastName = input.nextLine();
+		System.out.print("Address:");
+		this.tempAddress = input.nextLine();
+		System.out.print("Zipcode:");
+		this.tempZipcode = input.next();
+		System.out.print("State:");
+		this.tempState = input.next();
+		System.out.print("Username:");
+		this.tempUsername = input.next();
+		System.out.print("Password:");
+		this.tempPassword = input.next();
+		System.out.print("SSN:");
+		this.tempSsn = input.next();
+		
+		
+		if((tempFirstName.length() > 0) && (tempLastName.length()> 0) && (tempAddress.length() > 0) && (tempZipcode.length() > 0) && 
+				(tempState.length() > 0) && (tempUsername.length() > 0) && (tempPassword.length() > 0) && (tempSsn.length() > 0)){
+			
+			register3(); //Basically the equivalent of pressing submit
+		}
+		else {
+			System.out.println("Please fill in all required fields");
+		}
 		
 
+		
+	}
+	
+	public void register3() {
+		//Check to make sure SSN is unique and run regex on it
+		//Do regex for email 
+		//Make sure username is unique and no longer then 30 characters
+		//Make sure first name is only 20 characters
+		//Make sure last name is only 30 characters
+		//Make sure address is shorter than 30 characters
+		//Make sure zipcode is exactly 5 characters
+		//
+		
 		
 	}
 

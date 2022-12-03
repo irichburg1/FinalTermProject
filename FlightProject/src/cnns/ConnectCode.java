@@ -21,13 +21,16 @@ public class ConnectCode {
 	    	    System.out.println("Database connected");
 	    	
 	    	    // Create a statement
-	    	    Statement statement = connection.createStatement();
+	    	    PreparedStatement statement = connection.prepareStatement("select username from [dbo].[USER] where SSN"
+	    	    		+ " = '?'");
 	    	
+	    	    statement.setString(1,"000-00-0000");
+	    	    
 	    	    // Execute a statement
-	    	    ResultSet resultSet = statement.executeQuery
-	    	      ("select * from [dbo].[USER] where state "
-	    	        + " = 'GA'");
-	    	
+	    	    ResultSet resultSet = statement.executeQuery();
+	    	    
+	    	    int count = 0;
+	    	    
 	    	    // Iterate through the result and print the student names
 	    	    while (resultSet.next())
 	    	      System.out.println(resultSet.getString(3) + "\t" +
