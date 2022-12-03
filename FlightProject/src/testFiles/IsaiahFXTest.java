@@ -17,6 +17,7 @@ import javafx.scene.text.Font;
 
 
 
+
 public class IsaiahFXTest extends Application {
 	
 	Button button;
