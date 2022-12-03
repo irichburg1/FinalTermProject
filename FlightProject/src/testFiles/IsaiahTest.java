@@ -12,7 +12,7 @@ public class IsaiahTest {
 	
 	
 
-	public static String connectToServer () throws SQLException, ClassNotFoundException {
+	public String connectToServer () throws SQLException, ClassNotFoundException {
 		
 		try {
 			
@@ -29,8 +29,12 @@ public class IsaiahTest {
 				      		);
 			
 		    System.out.println("Database connected");
+	    	//Thread.sleep(5 * 1000);
+
 		    
-		    IsaiahFXTest.isConnected();
+		    //IsaiahFXTest.isConnected();
+		    //IsaiahFXTest.changetext();
+
 		    return ("");
 
 
@@ -45,7 +49,7 @@ public class IsaiahTest {
 		}
 		
 	}
-	
+/*	
 	public static void main(String[]args) throws SQLException, ClassNotFoundException {
 	    // Load the JDBC driver
 	    //Class.forName("com.mysql.jdbc.Driver");
@@ -65,5 +69,5 @@ public class IsaiahTest {
 
 		
 	}
-
+*/
 }
