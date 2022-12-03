@@ -22,6 +22,20 @@ public class Register {
 	
 	
 
+	private String tempFirstName;
+	private String tempLastName;
+	private String tempAddress;
+	private String tempZipcode;
+	private String tempState;
+	private String tempUsername;
+	private String tempPassword;
+	private String tempEmail;
+	private String tempSsn;
+	private String tempSecurityQuestion;
+	private String tempSecurityAnswer;
+	
+	
+
 	
 	private  String tempFirstName ;
 	private  String tempLastName;
@@ -49,9 +63,14 @@ public class Register {
 	}
 */
 	public void register1(Connection connection) throws SQLException {
+		Register r1 = new Register();
+		try {
+			r1.register1();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		Scanner input = new Scanner(System.in);
-		
 		System.out.print("Enter an email:");
 		Register r1 = new Register();
 		try {
@@ -121,6 +140,37 @@ public class Register {
 
 		
 	}
+		Scanner input = new Scanner(System.in);
+		System.out.print("First name:");
+		this.tempFirstName = input.nextLine();
+		System.out.print("Last name:");
+		this.tempLastName = input.nextLine();
+		System.out.print("Address:");
+		this.tempAddress = input.nextLine();
+		System.out.print("Zipcode:");
+		this.tempZipcode = input.next();
+		System.out.print("State:");
+		this.tempState = input.next();
+		System.out.print("Username:");
+		this.tempUsername = input.next();
+		System.out.print("Password:");
+		this.tempPassword = input.next();
+		System.out.print("SSN:");
+		this.tempSsn = input.next();
+		
+		
+		if((tempFirstName.length() > 0) && (tempLastName.length()> 0) && (tempAddress.length() > 0) && (tempZipcode.length() > 0) && 
+				(tempState.length() > 0) && (tempUsername.length() > 0) && (tempPassword.length() > 0) && (tempSsn.length() > 0)){
+			
+			register3(); //Basically the equivalent of pressing submit
+		}
+		else {
+			System.out.println("Please fill in all required fields");
+		}
+		
+
+		
+	}
 	
 	public void register2  ( Connection connection, String ssn, String fn, String ln, String addy, String zip, 
 			String state, String user, String pass, String email, String question, String answer, String adminKey) throws SQLException{
@@ -131,7 +181,16 @@ public class Register {
 	   	    		+ " = ? ");
 		 
 	   	 statement.setString(1,ssn);
-
+	public void register3() {
+		//Check to make sure SSN is unique and run regex on it
+		//Do regex for email 
+		//Make sure username is unique and no longer then 30 characters
+		//Make sure first name is only 20 characters
+		//Make sure last name is only 30 characters
+		//Make sure address is shorter than 30 characters
+		//Make sure zipcode is exactly 5 characters
+		//
+		
 	   	 ResultSet resultSet = statement.executeQuery();
 	public void register3() {
 		//Check to make sure SSN is unique and run regex on it
